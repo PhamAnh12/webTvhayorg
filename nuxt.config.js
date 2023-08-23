@@ -87,6 +87,6 @@ export default {
 
 
   serverMiddleware: [
-    { path: "/api", handler: "~/server-middleware/api/rest.js" },
+    { path: "/api", handler: "~/server/api/rest.js" },
   ],
 }

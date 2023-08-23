@@ -1,6 +1,6 @@
 <template>
 
-        <v-card  style="cursor: pointer">
+        <v-card  style="cursor: pointer" :to="`/movie/${movie.id}`" nuxt>
           <v-img height="300" :src ="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"></v-img>
           <v-card-title>
             {{ movie.title }}
@@ -20,7 +20,7 @@
                 <span class="grey--text text--lighten-1 text-caption mr-2 mt-1">{{movie.vote_average }}</span>
               </v-col>
             </v-row>
-            
+
           </v-card-text>
         </v-card>
 
