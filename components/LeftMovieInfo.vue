@@ -21,6 +21,8 @@
         <v-card>
           <v-card-title>
             <span class="headline"> {{ data.title }}</span>
+            <v-spacer></v-spacer>
+           <v-icon @click="closeModal" >mdi-close</v-icon>
           </v-card-title>
           <v-card-text>
             <v-row>

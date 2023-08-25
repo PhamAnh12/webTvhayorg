@@ -2,65 +2,14 @@
   <div class="container-page">
     <!--
     -->
-    <v-carousel>
-    <v-carousel-item
-      v-for="(item,i) in  nowPlaying"
-      :key="i"
+    <Silde :movies ="nowPlaying"></Silde>
 
-      reverse-transition="fade-transition"
-      transition="fade-transition"
-
-    >
-    <v-card>
-
-    <v-img cover :src="`https://image.tmdb.org/t/p/original/${item.poster_path}`" height="600" ></v-img>
-       <v-card-title >{{item.title}}</v-card-title>
-
-    </v-card>
-    </v-carousel-item>
-  </v-carousel>
     <SectionTitle title="Popular Movies" link="/movies" />
-
-    <v-row v-if="movies.length">
-      <v-col
-        cols="12"
-        xs="12"
-        sm="6"
-        md="3"
-        v-for="movie in movies"
-        :key="movie.id"
-      >
-        <MovieCard :movie="movie"></MovieCard>
-      </v-col>
-    </v-row>
-    <SectionTitle title="Upcoming Movies " link="/movies" />
-
-    <v-row v-if="movies.length">
-      <v-col
-        cols="12"
-        xs="12"
-        sm="6"
-        md="3"
-        v-for="movie in upcoming"
-        :key="movie.id"
-      >
-        <MovieCard :movie="movie"></MovieCard>
-      </v-col>
-    </v-row>
-    <SectionTitle title="TopRated Movies " link="/movies" />
-
-    <v-row v-if="topRated.length">
-      <v-col
-        cols="12"
-        xs="12"
-        sm="6"
-        md="3"
-        v-for="movie in topRated"
-        :key="movie.id"
-      >
-        <MovieCard :movie="movie"></MovieCard>
-      </v-col>
-    </v-row>
+    <SectionMovies v-if="movies.length" :movies="movies" />
+    <SectionTitle title="Upcoming Movies" link="/movies" />
+    <SectionMovies v-if="upcoming.length" :movies="upcoming" />
+    <SectionTitle title="Top Rated" link="/movies" />
+    <SectionMovies v-if="topRated.length" :movies="topRated" />
   </div>
 </template>
 
@@ -68,9 +17,9 @@
 export default {
   async asyncData({ $axios }) {
     try {
-      const res = await $axios.$get("/movie/popular?language=vi-VN");
-      const res2 = await $axios.$get("/movie/upcoming?language=vi-VN");
-      const res3 = await $axios.$get("/movie/top_rated?language=vi-VN");
+      const res = await $axios.$get("/movie/popular");
+      const res2 = await $axios.$get("/movie/upcoming");
+      const res3 = await $axios.$get("/movie/top_rated");
       const res4 = await $axios.$get("/movie/now_playing");
       return {
         movies: res.results.slice(0, 8),
@@ -89,6 +38,14 @@ export default {
 .container-page {
   max-width: 1200px;
   margin: auto;
+}
+#slide-header {
+  background: rgb(72, 72, 72);
+  background: linear-gradient(
+    106deg,
+    rgba(72, 72, 72, 1) 10%,
+    rgba(91, 85, 85, 1) 60%
+  );
 }
 </style>
 

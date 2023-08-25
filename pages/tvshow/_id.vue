@@ -1,11 +1,10 @@
 <template>
-  <div>Movies
-  
-  </div>
-
+   <div>
+    hiiiii
+   </div>
 </template>
 
-<script >
+<script>
 export default {
 
 }

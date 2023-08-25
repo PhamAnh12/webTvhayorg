@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <v-toolbar >
+  <div  >
+    <v-toolbar   >
 
       <v-toolbar-title @click="$router.push('/')" style="cursor: pointer">
          <v-icon color="black" size="64px"> mdi-television-classic </v-icon>
@@ -8,7 +8,10 @@
 
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
+      <span class="hidden-sm-and-up">
+        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      </span>
+      <v-toolbar-items class="hidden-xs-only">
         <v-btn
           text
           link
@@ -19,7 +22,18 @@
           {{ item.title }}
         </v-btn>
       </v-toolbar-items>
+      <v-btn icon @click="$nuxt.$emit('openOverlay', true)" ><v-icon>mdi-magnify</v-icon></v-btn>
     </v-toolbar>
+    <v-navigation-drawer v-model="drawer" absolute temporary left>
+      <v-list dense nav>
+        <v-list-item v-for="(item,index) in items" :key="index" :to="item.link">
+          <v-list-item-content>
+            {{ item.title }}
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
   </div>
 </template>
 
@@ -27,10 +41,11 @@
 export default {
   data() {
     return {
+      drawer:false,
       items: [
-        { title: "Movies", link: "/movies" },
-        { title: "TV Series", link: "/tvseries" },
-        { title: "Actors", link: "/actors" },
+        { title: "Movies", link: "/movie" },
+        { title: "TV Show", link: "/tvshow" },
+        { title: "Peopel", link: "/peopel" },
       ],
     };
   },
