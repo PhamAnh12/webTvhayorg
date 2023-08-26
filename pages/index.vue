@@ -4,11 +4,11 @@
     -->
     <Silde :movies ="nowPlaying"></Silde>
 
-    <SectionTitle title="Popular Movies" link="/movies" />
+    <SectionTitle title="Popular Movies" link="/movie" />
     <SectionMovies v-if="movies.length" :movies="movies" />
-    <SectionTitle title="Upcoming Movies" link="/movies" />
+    <SectionTitle title="Upcoming Movies" link="/movie" />
     <SectionMovies v-if="upcoming.length" :movies="upcoming" />
-    <SectionTitle title="Top Rated" link="/movies" />
+    <SectionTitle title="Top Rated" link="/movie" />
     <SectionMovies v-if="topRated.length" :movies="topRated" />
   </div>
 </template>
