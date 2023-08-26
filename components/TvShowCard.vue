@@ -1,12 +1,12 @@
 <template>
  <div>
-  <v-card style="cursor: pointer" :to="`/tvshow/${tvShow.id}`" nuxt>
+  <v-card style="cursor: pointer" :to="`/tvshow/${tvShow.id}`" nuxt >
     <v-img
       height="300"
       :src="`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`"
     ></v-img>
     <v-card-title>
-      {{tvShow.title }}
+      {{tvShow.name }}
     </v-card-title>
     <v-card-text>
       <v-row align-item="center" class="mx-0" no-gutters>

@@ -3,7 +3,7 @@
     <v-toolbar   >
 
       <v-toolbar-title @click="$router.push('/')" style="cursor: pointer">
-         <v-icon color="black" size="64px"> mdi-television-classic </v-icon>
+         <v-icon color="white" size="64px"> mdi-television-classic </v-icon>
           TVHayOrg
 
       </v-toolbar-title>

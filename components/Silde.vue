@@ -15,9 +15,12 @@
         <v-card height="400" class="d-flex justify-center align-center">
           <v-row align="center" justify="center" no-gutters>
             <v-col cols="12" sm="3">
-              <v-img
+              <v-card   :to="`/movie/${item.id}`" nuxt>
+                <v-img
                 :src="`https://image.tmdb.org/t/p/w500/${item.poster_path}`"
               ></v-img>
+              </v-card>
+
             </v-col>
             <v-col cols="12" sm="7" class="ml-6 hidden-xs-only">
               <strong

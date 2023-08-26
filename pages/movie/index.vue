@@ -3,14 +3,14 @@
     <v-container>
     <h2>{{ titleMovie }} Movies</h2>
     <div class="text-center my-4">
-      <v-btn class="mr-2" value="popular" @click="handleGetBY('popular','Popular')">Popular</v-btn>
-      <v-btn class="mr-2" value="now_playing" @click="handleGetBY('now_playing','Now Playing')">Now Playing</v-btn>
-      <v-btn class="mr-2" value="upcoming" @click="handleGetBY('upcoming','Upcoming')">Upcoming</v-btn>
-      <v-btn class="mr-2" value="top_rated" @click="handleGetBY('top_rated','Top Rated')">Top Rated</v-btn>
+      <v-btn class="mr-2" value="popular" @click="handleGetBY('popular','Popular')" >Popular</v-btn>
+      <v-btn class="mr-2" value="now_playing" @click="handleGetBY('now_playing','Now Playing')" >Now Playing</v-btn>
+      <v-btn class="mr-2" value="upcoming" @click="handleGetBY('upcoming','Upcoming')"  >Upcoming</v-btn>
+      <v-btn class="mr-2" value="top_rated" @click="handleGetBY('top_rated','Top Rated')"  >Top Rated</v-btn>
 
     </div>
     <v-row v-if="$fetchState.pending">
-      <v-col cols="12" sm="3" v-for="s in 20" :key="s">
+      <v-col cols="12" xs="12"  sm="6" md="3" v-for="s in 20" :key="s">
         <v-skeleton-loader type="image, list-item-two-line"></v-skeleton-loader>
       </v-col>
     </v-row>
@@ -18,7 +18,7 @@
       <h2 class="error">An error occurred!</h2>
     </v-row>
     <v-row>
-      <v-col cols="12" sm="3" v-for="movie in movies" :key="movie.id">
+      <v-col cols="12" xs="12"  sm="6" md="3" v-for="movie in movies" :key="movie.id">
         <MovieCard :movie="movie" />
       </v-col>
     </v-row>

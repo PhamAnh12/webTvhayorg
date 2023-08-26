@@ -15,6 +15,7 @@
           </span>
           <v-spacer></v-spacer>
           <Rating :data="data" />
+
         </div>
         <SocialShare />
         <v-divider class="mt-8"></v-divider>
@@ -82,8 +83,9 @@
               sm="3"
               v-for="recommend in recommendations"
               :key="recommend.id"
+
             >
-              <v-card :to="`/movie/${recommend.id}`" nuxt>
+              <v-card :to="`/movie/${recommend.id}`" nuxt  >
                 <v-img
                   :src="`https://image.tmdb.org/t/p/w300${recommend.poster_path}`"
                 />
@@ -103,12 +105,13 @@ export default {
   async asyncData({ params, $axios }) {
     try {
       const res = await $axios.$get(
-        `/movie/${params.id}?append_to_response=credits,videos,images`
+        `/movie/${params.id}?append_to_response=credits,videos,images,external_ids`
       );
       const resVn = await $axios.$get(`/movie/${params.id}?language=vi-VN`);
       const res2 = await $axios.$get(
-        `/movie/${params.id}/recommendations?language=vi-VN`
+        `/movie/${params.id}/recommendations`
       );
+
       return {
         data: res,
         dataVn: resVn,
@@ -117,6 +120,9 @@ export default {
     } catch (e) {
       console.log(e);
     }
+  },
+  data(){
+
   },
   methods: {
     getCastAvatar(item) {
