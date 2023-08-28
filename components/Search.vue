@@ -20,7 +20,7 @@
         <v-list-item
           v-for="item in results"
           :key="item.id"
-          :to="`/movie/${item.id}`"
+          :to="`/${item.media_type}/${item.id}`"
         >
           <v-list-item-avatar>
             <v-img
@@ -65,7 +65,7 @@ export default {
       }
       this.searching = true;
       await this.$axios
-        .$get(`/search/movie?query=${query}`)
+        .$get(`/search/multi?query=${query}`)
         .then((response) => {
           this.results = response.results.slice(0, 10);
           this.searching = false;

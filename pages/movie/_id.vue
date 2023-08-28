@@ -11,7 +11,7 @@
             {{ data.title }}
           </h2>
           <span class="display-1 ml-2 grey--text font-weight-light">
-            {{ data.release_date.slice(0, 4) }}
+            {{ data.release_date.slice(0,4)}}
           </span>
           <v-spacer></v-spacer>
           <Rating :data="data" />
@@ -101,6 +101,7 @@
 </template>
 
 <script>
+
 export default {
   async asyncData({ params, $axios }) {
     try {

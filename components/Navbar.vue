@@ -45,7 +45,7 @@ export default {
       items: [
         { title: "Movies", link: "/movie" },
         { title: "TV Show", link: "/tvshow" },
-        { title: "Peopel", link: "/peopel" },
+        { title: "Peopel", link: "/people" },
       ],
     };
   },
