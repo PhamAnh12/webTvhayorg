@@ -7,6 +7,7 @@
       ></v-img>
       <v-card-title>
         {{ tvShow.name }}
+
       </v-card-title>
       <v-card-text>
         <v-row align-item="center" class="mx-0" no-gutters>

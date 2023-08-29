@@ -32,13 +32,13 @@ export default {
    },
    methods:{
     convertGender(gender){
-      const genderName = "Male"
+      let genderName = " "
       switch(gender){
-        case 0 :
-           genderName ="Male"
-          break;
         case 1 :
-        genderName ="Female"
+          genderName ="Female"
+          break;
+        case 2 :
+        genderName ="Male"
           break;
 
 

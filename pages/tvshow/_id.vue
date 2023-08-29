@@ -28,6 +28,7 @@
                 v-for="(image, index) in data.images.backdrops"
                 :key="index"
                 v-slot="{ toggle }"
+
               >
                 <v-card @click="toggle" class="ma-4">
                   <v-img
@@ -48,7 +49,7 @@
                 :items="data.credits.cast"
               >
                 <template v-slot:default="{ item }">
-                  <v-list-item :key="item.id">
+                  <v-list-item :key="item.id" :to="`/people/${item.id}`" nuxt>
                     <v-list-item-avatar>
                       <v-img
                         height="45"

@@ -13,7 +13,7 @@
           <span class="grey--text text--lighten-1 text-caption mr-2 " v-for="(knownFor, index) in  people.known_for.slice(0,4) " :key =index >{{
             knownFor.original_title
             }}
-           <span v-if="index  != 3 &&  knownFor.original_title ">,</span>
+           <span v-if="index  != 2 &&  knownFor.original_title ">,</span>
             </span>
 
         </v-row>

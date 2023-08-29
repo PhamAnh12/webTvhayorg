@@ -6,6 +6,8 @@
     ></v-img>
     <v-card-title>
       {{ movie.title }}
+
+      {{  movie.release_date.slice(0,4) }}
     </v-card-title>
     <v-card-text>
       <v-row align-item="center" class="mx-0" no-gutters>

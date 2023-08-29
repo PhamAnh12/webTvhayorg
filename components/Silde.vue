@@ -28,7 +28,7 @@
               >
                 {{ item.title }}
               </strong>
-
+             <h3> {{ item.release_date.slice(0,4) }} </h3>
               <Rating :data="item" />
               <strong
                 class="white--text display-2 text-center"
