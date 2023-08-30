@@ -32,7 +32,8 @@
             />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title> {{ item.title }} </v-list-item-title>
+            <v-list-item-title v-if="item.title"> {{ item.title }} </v-list-item-title>
+            <v-list-item-title v-if="item.name"> {{ item.name }} </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

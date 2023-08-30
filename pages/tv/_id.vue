@@ -83,7 +83,7 @@
               :key="recommend.id"
 
             >
-              <v-card :to="`/movie/${recommend.id}`" nuxt  >
+              <v-card :to="`/tv/${recommend.id}`" nuxt  >
                 <v-img
                   :src="`https://image.tmdb.org/t/p/w300${recommend.poster_path}`"
                 />

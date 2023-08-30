@@ -59,7 +59,7 @@ export default {
       drawer: false,
       items: [
         { title: "Movies", link: "/movie" },
-        { title: "TV Show", link: "/tvshow" },
+        { title: "TV Show", link: "/tv" },
         { title: "Peopel", link: "/people" },
       ],
     };

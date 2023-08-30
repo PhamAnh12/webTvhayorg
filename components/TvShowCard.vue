@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card style="cursor: pointer" :to="`/tvshow/${tvShow.id}`" nuxt>
+    <v-card style="cursor: pointer" :to="`/tv/${tvShow.id}`" nuxt>
       <v-img
         height="300"
         :src="`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`"
