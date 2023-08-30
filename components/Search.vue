@@ -2,7 +2,7 @@
   <div>
     <v-text-field
       append-icon="mdi-magnify"
-      placeholder="Search movie here"
+      placeholder="Search movie, tv here"
       single-line
       hide-details
       clearable

@@ -54,27 +54,19 @@ export default {
   },
   data(){
     return{
-      genres:[]
+
     }
   },
   methods: {
     genreTypeName(genId){
-        for(const item of this.genres){
+        for(const item of this.$store.state.genres){
           if(item.id  == genId){
             return item.name
           }
         }
     }
   },
-  async fetch(){
-    await this.$axios.$get('/genre/movie/list')
-    .then(response =>{
-      this.genres = response.genres;
-    })
-    .catch(e =>{
-      console.log(e);
-    })
-  }
+
 };
 </script>
 

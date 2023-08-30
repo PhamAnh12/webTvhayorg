@@ -7,7 +7,7 @@
         </v-col>
         <v-col cols="12" sm="9">
           <h1>{{ data.name }}</h1>
-          <h2 class="mt-4">Biography</h2>
+          <h2 class="mt-4 pink--text">Biography</h2>
           <span
             >{{ data.biography.split(".")[0] }} .
             <p
@@ -21,7 +21,7 @@
           </span>
           <v-dialog v-model="dialog" width="800">
             <v-card>
-              <v-card-title class="text-h5">
+              <v-card-title class="text-h5 pink--text">
                 Biography {{ data.name }}
               </v-card-title>
 
@@ -39,7 +39,7 @@
               </v-card-actions>
             </v-card>
           </v-dialog>
-          <h2 class="mt-4">Images</h2>
+          <h2 class="mt-4 pink--text">Images</h2>
           <v-row>
             <v-slide-group multiple show-arrows>
               <v-slide-item
@@ -58,7 +58,7 @@
               </v-slide-item>
             </v-slide-group>
           </v-row>
-          <h2 class="mt-4">Known For</h2>
+          <h2 class="mt-4 pink--text">Known For</h2>
           <v-row class="mt-2 mb-4">
             <v-slide-group multiple show-arrows>
               <v-slide-item
@@ -93,8 +93,8 @@
               </v-slide-item>
             </v-slide-group>
           </v-row>
-          <h2 class="mt-4">Acting</h2>
-          <Acting :data="data"></Acting>
+          <h2 class="mt-4 pink--text">Acting</h2>
+          <Acting :data="data.combined_credits.cast"></Acting>
         </v-col>
       </v-row>
     </v-container>
